@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/styles.css" />
+    </head>
+
+    <body>
+        <h1>Blog</h1>
+        <a href="/create-account">Create Account</a>
+        <a href="/login">Login</a>
+
+        <form method="GET" action="/view-posts">
+        <button>View Your Posts</button></form>
+
+        <h2>Create a Post</h2>
+
+            <form method="POST" action="/create-post">
+                <input type="text" placeholder="Title" name="titleText" />
+                <input type="text" placeholder="Enter your content here" name="bodyText" />
+                <button>Post</button>
+            </form>
+
+            <ul>
+                {{#allPosts}}
+                    <li>
+                        <h3>{{title}}</h3>
+                        {{body}}
+                        {{date_created}}
+
+                        <form method="POST" action="/post/delete">
+                            <input type="hidden" value={{post_id}} name="postId" />
+                            <button>Delete</button>
+                            <a href="/edit/{{post_id}}">Edit</a>
+                        </form>
+                    </li>
+                {{/allPosts}}
+            </ul>
+    </body>
+</html>
