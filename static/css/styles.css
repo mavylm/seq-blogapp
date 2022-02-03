@@ -11,15 +11,126 @@ body {
   overflow-x: hidden;
 }
 
-input {
+p {
+  padding-top: 10px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.login-input {
   padding: 10px 20px;
   border: none;
   border-bottom: 2px teal solid;
   background-color: #fff;
   color: #000;
   font-size: 17px;
+  margin-bottom: 20px;
+  width: 60%;
 }
 
 input:focus {
   outline: none;
+}
+
+a {
+  color: teal;
+}
+
+.login-form {
+  padding: 50px 10px;
+  background-color: #ebecf0;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.form-button {
+  border: none;
+  background-color: teal;
+  color: #fff;
+  padding: 12px 20px;
+  cursor: pointer;
+  width: 60%;
+}
+
+.form-button:hover {
+  opacity: 0.6;
+}
+
+.login-button {
+  border: none;
+  background-color: teal;
+  color: #fff;
+  padding: 12px 20px;
+  cursor: pointer;
+  width: 60%;
+}
+
+.login-button:hover {
+  opacity: 0.6;
+}
+
+.delete-button {
+  border: none;
+  background-color: #ff4444;
+  color: #fff;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  opacity: 0.6;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col {
+  width: 500px;
+  padding: 20px;
+}
+
+.error-msg {
+  color: red;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  padding: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  background-color: red;
+}
+
+li {
+  list-style: none;
+  background-color: aliceblue;
+  border-radius: 10px;
+  width: 800px;
+  padding: 15px;
+  margin: 20px 0px;
+}
+
+.blog-form {
+  background-color: green;
+  width: 800px;
+  padding: 20px 0px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
 }

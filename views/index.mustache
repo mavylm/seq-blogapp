@@ -4,35 +4,23 @@
     </head>
 
     <body>
-        <h1>Blog</h1>
-        <a href="/create-account">Create Account</a>
-        <a href="/login">Login</a>
+        <div class="container">
+            <div class="col">
+            <h1>Welcome to Blogify!</h1>
+            <p>Share your experience and connect with like-minded people.</p>
+            </div>
 
-        <form method="GET" action="/view-posts">
-        <button>View Your Posts</button></form>
-
-        <h2>Create a Post</h2>
-
-            <form method="POST" action="/create-post">
-                <input type="text" placeholder="Title" name="titleText" />
-                <input type="text" placeholder="Enter your content here" name="bodyText" />
-                <button>Post</button>
-            </form>
-
-            <ul>
-                {{#allPosts}}
-                    <li>
-                        <h3>{{title}}</h3>
-                        {{body}}
-                        {{date_created}}
-
-                        <form method="POST" action="/post/delete">
-                            <input type="hidden" value={{post_id}} name="postId" />
-                            <button>Delete</button>
-                            <a href="/edit/{{post_id}}">Edit</a>
-                        </form>
-                    </li>
-                {{/allPosts}}
-            </ul>
+            <div class="col">
+                <form method="POST" action="/login" class="login-form">
+                    <input type="text" placeholder="Username" name="username" class="login-input" required />
+                    <input type="password" placeholder="Password" name="password" class="login-input" required />
+                    <button class="login-button">Login</button>
+                    <p class="error-msg">{{errorMessage}}</p>
+                    <p>Don't have an account? <a href="/create-account">Register here</a></p>
+                    <p>{{logoutMessage}}</p>
+                </form>
+                
+            </div>
+        </div>
     </body>
 </html>

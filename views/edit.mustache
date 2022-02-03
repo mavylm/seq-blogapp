@@ -5,14 +5,19 @@
 
     <body>
         <h1>Blog</h1>
-
+        <a href="/blog/dashboard">Dashboard</a>
+        <a href="/blog/view-all">View all posts</a>
+        <a href="/logout">Logout</a>
+        
         <h2>Edit a Post</h2>
-            <form method="POST" action="/update">
-                <input type="text" value="{{title}}" name="titleText" />
-                <input type="text" value="{{body}}" name="bodyText" />
-                <input type="hidden" value={{post_id}} name="postId" />
-                <button>Update</button>
-                <a href="/">Back</a>
+        {{#fullPost}}
+            <form method="POST" action="/blog/update/{{id}}">
+                <input type="text" value="{{title}}" name="title" />
+                <input type="text" value="{{body}}" name="body" />
+                <input type="text" value="{{category}}" name="category" />
+                <button class="form-button">Update</button>
+                <a href="/blog/dashboard">Back</a>
             </form>
+        {{/fullPost}}
     </body>
 </html>

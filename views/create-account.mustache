@@ -4,14 +4,23 @@
     </head>
 
     <body>
-        <h1>Blog</h1>
-
-        <h2>Create Account</h2>
-            <form method="POST" action="/create-account">
-                <input type="text" placeholder="Username" name="username" />
-                <input type="password" placeholder="Password" name="password" />
-                <button>Register</button>
-                <a href="/">Back</a>
-            </form>
+        <div class="container">
+            <div class="col">
+                <h1>Create Account</h1>
+                <p>Start your Blogify adventure today!</p>
+            </div>
+                
+            <div class="col">
+                <form method="POST" action="/create-account" class="login-form">
+                    <input type="text" placeholder="Username" name="username" class="login-input" required />
+                    <input type="password" placeholder="Password" name="password" class="login-input" required />
+                    <button class="form-button">Register</button>
+                    <p class="error-msg">{{errorMessage}}</p>
+                    <p>Already registered? <a href="/">Login</a></p>
+                    <p></p>
+                </form>
+               
+            </div>
+        </div>
     </body>
 </html>

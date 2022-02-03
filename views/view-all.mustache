@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/styles.css" />
+    </head>
+
+    <body>
+        <h1>All posts</h1>
+        <a href="/blog/dashboard">Dashboard</a>
+        <a href="/blog/view-all">View all posts</a>
+        <a href="/logout">Logout</a>
+            <ul>
+                {{#allPosts}}
+                    <li>
+                        <h3>{{title}}</h3>
+                        <p>{{body}}</p>
+                        <p>Posted by {{user.username}} | {{createdAt}}<br />
+                        <a href="/blog/post/{{id}}">View Post</a></p>
+                    </li>
+                {{/allPosts}}
+            </ul>
+    </body>
+</html>

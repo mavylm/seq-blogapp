@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/styles.css" />
+    </head>
+
+    <body>
+        <h1>Post</h1>
+        <a href="/blog/dashboard">Dashboard</a>
+        <a href="/blog/view-all">View all posts</a>
+        <a href="/logout">Logout</a>
+            
+            <h3>{{title}}</h3>
+            <p>{{body}}</p>
+            <p>Posted by {{user.username}} | {{createdAt}}</p>
+            
+            <h4>Add a Comment</h4>
+                <form method="POST" action="/blog/create-comment">
+                <input type="hidden" value={{id}} name="postId" />
+                <input type="text" placeholder="Enter your comment" name="comment" />
+                <button>Comment</button>
+                </form>
+            
+            <h4>All Comments</h4>
+            {{#comments}}
+                <p>{{body}}</p>
+                <p>Commented by {{commenter.username}} | {{createdAt}}</p>
+                <form method="POST" action="/blog/delete/comment/{{id}}">
+                <input type="hidden" value={{post_id}} name="postId" />
+                <button>Delete</button>
+                </form>
+            {{/comments}}
+           
+    </body>
+</html>
