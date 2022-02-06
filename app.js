@@ -4,6 +4,7 @@ const session = require('express-session');
 const app = express();
 const indexRoutes = require('./routes/index');
 const blogRoutes = require('./routes/blog');
+const PORT = process.env.PORT || 8080;
 
 app.engine('mustache', mustacheExpress());
 app.set('views', './views');
@@ -27,6 +28,6 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('Server is running...');
 });

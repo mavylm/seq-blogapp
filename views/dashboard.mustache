@@ -6,41 +6,49 @@
     <body>
         <div class="dashboard">
             <h1>Dashboard</h1>
-            <div class="actions">
-                <a href="/blog/dashboard">Dashboard</a>
-                <a href="/blog/view-all">View all posts</a>
-                <a href="/logout">Logout</a>
+                <nav>
+        <ul>
+        <div class="nav-link">
+            <li><a href="/blog/dashboard">Dashboard</a></li>
+            <li><a href="/blog/view-all">View all posts</a></li>
+            <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </div>
+        </ul>
+    </nav>
 
             <div class="blog-form">
                 <h2>Create a New Post</h2>
 
                 <form method="POST" action="/blog/create-post">
-                    <input type="text" placeholder="Title" name="title" />
-                    <input type="text" placeholder="What's on your mind?" name="body" />
-                    <input type="text" placeholder="Category" name="category" />
+                    <input type="text" class="blog-input" placeholder="Title" name="title" required />
+                    <input type="text" class="blog-input" placeholder="What's on your mind?" name="body" required />
+                    <input type="text" class="blog-input" placeholder="Category" name="category" required />
                     <button class="form-button">Post</button>
                 </form>
             </div>
 
                 <ul>
                 {{#allPosts}}
-                    <li>
+                    <li class="blog-post">
                         <h3>{{title}}</h3>
                         <p>{{body}}</p>
-                        <p>Posted by {{user.username}} | {{createdAt}}</p>
+                        <hr />
                         <p>Category: <b>{{category}}</b></p>
+                        <p class="blog-info">Posted by {{user.username}} | {{createdAt}}</p>
+                        
                         
                         <div class="actions">
-                        <a href="/blog/post/{{id}}">View Post</a></p>
-                        <a href="/blog/edit/{{id}}">Edit</a>
+                        <a href="/blog/post/{{id}}" class="view-button"  alt="View More" title="View More"><i class="fas fa-eye"></i> View More</a></p>
+                        <a href="/blog/edit/{{id}}" class="view-button" alt="Edit" title="Edit"><i class="fas fa-edit"></i> Edit</a>
                         <form method="POST" action="/blog/delete/{{id}}">
-                            <button class="delete-button">Delete</button>
+                            <button class="delete-button" alt="Delete" title="Delete"><i class="fas fa-trash-alt"></i> Delete</button>
                         </form>
                         </div>
                     </li>
                 {{/allPosts}}
                 </ul>
         </div>
+        <script src="https://kit.fontawesome.com/c03ec31dc2.js" crossorigin="anonymous"></script>
+
     </body>
 </html>

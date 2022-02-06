@@ -24,7 +24,6 @@ Create a blog app using PostgreSQL Database & Sequelize CLI
 - [ExpressJS](https://expressjs.com/)
 - [Mustache Express](https://github.com/bryanburgers/node-mustache-express)
 - [Express Session](https://github.com/expressjs/session)
-- [pg-promise](https://github.com/vitaly-t/pg-promise)
 - [Sequelize CLI](https://github.com/sequelize/cli)
 
 ## 🔎 Preview

@@ -6,17 +6,19 @@
     <body>
         <div class="container">
             <div class="col">
-                <h1>Create Account</h1>
-                <p>Start your Blogify adventure today!</p>
+                <img src="/img/Adventure.svg" />
+               
             </div>
                 
-            <div class="col">
+            <div class="col col-box">
+             <h1>Create Account</h1>
+                <p>Start your Blogify adventure today!</p>
                 <form method="POST" action="/create-account" class="login-form">
                     <input type="text" placeholder="Username" name="username" class="login-input" required />
                     <input type="password" placeholder="Password" name="password" class="login-input" required />
-                    <button class="form-button">Register</button>
+                    <button class="login-button">Register</button>
                     <p class="error-msg">{{errorMessage}}</p>
-                    <p>Already registered? <a href="/">Login</a></p>
+                    <p>Already registered? <a href="/">Login here</a></p>
                     <p></p>
                 </form>
                
