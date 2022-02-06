@@ -16,7 +16,7 @@ p {
 }
 
 h2 {
-  margin-bottom: 10px;
+  margin: 15px 0px;
 }
 
 hr {
@@ -142,7 +142,7 @@ input:focus {
 .dashboard {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -162,6 +162,21 @@ ul {
   font-size: 17px;
   margin-bottom: 20px;
   width: 100%;
+}
+
+.blog-button {
+  border: none;
+  background-color: #5bccf6;
+  color: #fff;
+  border-radius: 6px;
+  padding: 12px 20px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 700;
+}
+
+.blog-button:hover {
+  opacity: 0.6;
 }
 
 .blog-post {

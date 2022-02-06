@@ -7,23 +7,21 @@
         <div class="dashboard">
             <h1>Dashboard</h1>
                 <nav>
-        <ul>
-        <div class="nav-link">
-            <li><a href="/blog/dashboard">Dashboard</a></li>
-            <li><a href="/blog/view-all">View all posts</a></li>
-            <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-            </div>
-        </ul>
-    </nav>
+                <ul class="nav-link">
+                    <li><a href="/blog/dashboard">Dashboard</a></li>
+                    <li><a href="/blog/view-all">View all posts</a></li>
+                    <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+                </nav>
 
             <div class="blog-form">
-                <h2>Create a New Post</h2>
+                <h2><i class="fas fa-pencil-alt"></i> Create a New Post</h2>
 
                 <form method="POST" action="/blog/create-post">
                     <input type="text" class="blog-input" placeholder="Title" name="title" required />
                     <input type="text" class="blog-input" placeholder="What's on your mind?" name="body" required />
                     <input type="text" class="blog-input" placeholder="Category" name="category" required />
-                    <button class="form-button">Post</button>
+                    <button class="blog-button">Post</button>
                 </form>
             </div>
 
