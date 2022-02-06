@@ -7,5 +7,24 @@
     "mustache-express": "^1.3.2",
     "pg": "^8.7.3",
     "sequelize": "^6.15.0"
-  }
+  },
+  "name": "server",
+  "description": "Create a blog app using PostgreSQL Database & Sequelize CLI",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mavylm/seq-blogapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mavylm/blogapp/issues"
+  },
+  "homepage": "https://github.com/mavylm/seq-blogapp#readme"
 }
