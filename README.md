@@ -1,4 +1,4 @@
-# Blog Application (WIP)
+# Blog Application
 
 Create a blog app using PostgreSQL Database & Sequelize CLI
 
@@ -16,8 +16,6 @@ Create a blog app using PostgreSQL Database & Sequelize CLI
 - Delete comments
 - Individual post page that shows more details and comments
 - Delete a post and all the comments associated with it
-- Sort posts based on number of comments
-- Sort posts based on date published
 
 ## 🛠️ Packages
 
@@ -28,8 +26,8 @@ Create a blog app using PostgreSQL Database & Sequelize CLI
 
 ## 🔎 Preview
 
-WIP
+![Blogify Preview](./static/img/blogify.png)
 
 ## 🔗 Link
 
-WIP
+[https://m-blogify.herokuapp.com/](https://m-blogify.herokuapp.com/)

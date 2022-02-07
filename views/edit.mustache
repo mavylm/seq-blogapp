@@ -17,9 +17,9 @@
             <h2><i class="fas fa-edit"></i> Edit a Post</h2>
             {{#fullPost}}
                 <form method="POST" action="/blog/update/{{id}}">
-                    <input type="text" class="blog-input" value="{{title}}" name="title" />
+                    <input type="text" class="blog-input" value="{{title}}" name="title" required />
                     <textarea name="body" rows="10" required>{{body}}</textarea>
-                    <input type="text" class="blog-input" value="{{category}}" name="category" />
+                    <input type="text" class="blog-input" value="{{category}}" name="category" required />
                     <button class="blog-button">Update</button>
                 </form>
             {{/fullPost}}
