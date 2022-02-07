@@ -4,31 +4,50 @@
     </head>
 
     <body>
-        <h1>Post</h1>
-        <a href="/blog/dashboard">Dashboard</a>
-        <a href="/blog/view-all">View all posts</a>
-        <a href="/logout">Logout</a>
+        <div class="dashboard">
+            <nav>
+                <ul class="nav-link">
+                    <li><a href="/blog/dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="/blog/view-all"><i class="fas fa-bars"></i> View All</a></li>
+                    <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
             
-            <h3>{{title}}</h3>
-            <p>{{body}}</p>
-            <p>Posted by {{user.username}} | {{createdAt}}</p>
-            
-            <h4>Add a Comment</h4>
-                <form method="POST" action="/blog/create-comment">
-                <input type="hidden" value={{id}} name="postId" />
-                <input type="text" placeholder="Enter your comment" name="comment" />
-                <button>Comment</button>
-                </form>
-            
-            <h4>All Comments</h4>
-            {{#comments}}
+            <h2 class="blog-form"><i class="far fa-file-alt"></i> View Post</h2>
+            <div class="blog-post">
+                <h3>{{title}}</h3>
                 <p>{{body}}</p>
-                <p>Commented by {{commenter.username}} | {{createdAt}}</p>
-                <form method="POST" action="/blog/delete/comment/{{id}}">
-                <input type="hidden" value={{post_id}} name="postId" />
-                <button>Delete</button>
-                </form>
-            {{/comments}}
-           
+                <hr />
+                <p>Category: <b>{{category}}</b></p>
+                <p class="blog-info">Posted by {{user.username}} | {{createdAt}}</p>
+            </div>
+                
+            <div class="comment-form">
+                <h2><i class="far fa-comment"></i> Add a Comment</h2>
+                    <form method="POST" action="/blog/create-comment">
+                    <input type="hidden" value={{id}} name="postId" />
+                    <textarea placeholder="Enter your comment" name="comment" rows="4" required></textarea>
+                    <button class="blog-button">Comment</button>
+                    </form>
+
+                
+                <h2><i class="far fa-comments"></i> All Comments</h2>
+                <ul>
+                {{#comments}}
+                    <li class="blog-post">
+                    <p>{{body}}</p>
+                    <p>Commented by {{commenter.username}} | {{createdAt}}</p>
+                    <form method="POST" action="/blog/delete/comment/{{id}}">
+                    <input type="hidden" value={{post_id}} name="postId" />
+                    <div class="actions">
+                    <button class="delete-button" alt="Delete" title="Delete"><i class="fas fa-trash-alt"></i> Delete</button>
+                    </div>
+                    </form>
+                    </li>
+                {{/comments}}
+                </ul>
+            </div>
+        </div>
+        <script src="https://kit.fontawesome.com/c03ec31dc2.js" crossorigin="anonymous"></script>
     </body>
 </html>

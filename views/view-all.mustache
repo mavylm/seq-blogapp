@@ -4,19 +4,30 @@
     </head>
 
     <body>
-        <h1>All posts</h1>
-        <a href="/blog/dashboard">Dashboard</a>
-        <a href="/blog/view-all">View all posts</a>
-        <a href="/logout">Logout</a>
+       <div class="dashboard">
+            <nav>
+                <ul class="nav-link">
+                    <li><a href="/blog/dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="/blog/view-all"><i class="fas fa-bars"></i> View All</a></li>
+                    <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
             <ul>
+                <h2 class="blog-form"><i class="fas fa-bars"></i> All Posts</h2>
                 {{#allPosts}}
-                    <li>
+                    <li class="blog-post">
                         <h3>{{title}}</h3>
                         <p>{{body}}</p>
-                        <p>Posted by {{user.username}} | {{createdAt}}<br />
-                        <a href="/blog/post/{{id}}">View Post</a></p>
+                        <hr />
+                        <p>Category: <b>{{category}}</b></p>
+                        <p class="blog-info">Posted by {{user.username}} | {{createdAt}}</p>
+                        <div class="actions">
+                        <a href="/blog/post/{{id}}" class="view-button"  alt="View More" title="View More"><i class="fas fa-eye"></i> View More</a></p>
+                        </div>
                     </li>
                 {{/allPosts}}
             </ul>
+        </div>
+        <script src="https://kit.fontawesome.com/c03ec31dc2.js" crossorigin="anonymous"></script>
     </body>
 </html>
