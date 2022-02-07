@@ -20,23 +20,22 @@
                 <hr />
                 <p>Category: <b>{{category}}</b></p>
                 <p class="blog-info">Posted by {{user.username}} | {{createdAt}}</p>
-            </div>
-                
-            <div class="comment-form">
-                <h2><i class="far fa-comment"></i> Add a Comment</h2>
+                <hr />
+
+                <h3><i class="far fa-comment"></i> Leave a Comment</h2>
                     <form method="POST" action="/blog/create-comment">
-                    <input type="hidden" value={{id}} name="postId" />
-                    <textarea placeholder="Enter your comment" name="comment" rows="4" required></textarea>
-                    <button class="blog-button">Comment</button>
+                        <input type="hidden" value={{id}} name="postId" />
+                        <textarea placeholder="Enter your comment" name="comment" rows="4" required></textarea>
+                        <button class="blog-button">Comment</button>
                     </form>
 
-                
-                <h2><i class="far fa-comments"></i> All Comments</h2>
+                <h3><i class="far fa-comments"></i> All Comments</h2>
                 <ul>
                 {{#comments}}
-                    <li class="blog-post">
+                    <li>
+                    <hr />
                     <p>{{body}}</p>
-                    <p>Commented by {{commenter.username}} | {{createdAt}}</p>
+                    <p class="blog-info">Commented by {{commenter.username}} | {{createdAt}}</p>
                     <form method="POST" action="/blog/delete/comment/{{id}}">
                     <input type="hidden" value={{post_id}} name="postId" />
                     <div class="actions">

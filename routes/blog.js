@@ -35,7 +35,7 @@ router.get('/dashboard', authenticateMiddleware, (req, res) => {
   });
 });
 
-router.get('/view-all', (req, res) => {
+router.get('/view-all', authenticateMiddleware, (req, res) => {
   models.Post.findAll({
     include: [
       {
@@ -88,7 +88,7 @@ router.get('/post/category/:category', (req, res) => {
   });
 });
 
-router.get('/edit/:postId', (req, res) => {
+router.get('/edit/:postId', authenticateMiddleware, (req, res) => {
   const postId = req.params.postId;
   models.Post.findByPk(postId).then((post) => {
     res.render('edit', { fullPost: post });
@@ -117,7 +117,7 @@ router.post('/update/:postId', (req, res) => {
   });
 });
 
-router.get('/post/:postId', (req, res) => {
+router.get('/post/:postId', authenticateMiddleware, (req, res) => {
   const postId = parseInt(req.params.postId);
   models.Post.findByPk(postId, {
     include: [
